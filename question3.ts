@@ -16,7 +16,16 @@ function getQuestionPart(phrases:string[]):string[] {
           // ถ้าตรงก็ไล่วนๆเป็นพายุหมุนจนกว่าจะไม่ตรง
           if(word1[i] == word2[j] && word3[k] == word2[j]){
             while(word1[i+t] == word2[j+t] && word3[k+t] == word2[j+t]){
-              t++
+                if(!word1[i+t]){
+                    break;
+                }
+                if(!word2[j+t]){
+                    break;
+                }
+                if(!word3[k+t]){
+                    break;
+                }
+                t++
             }
             //ถ้ามีคำใหม่ที่ยาวกว่าก็แทนที่
             if(t>max){
